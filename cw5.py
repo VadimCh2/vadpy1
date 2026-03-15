@@ -1,3 +1,5 @@
-name = "kikira"
-print(name)
+rikika = "Alisa"
+print(rikika)
+
+
 
