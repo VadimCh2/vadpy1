@@ -1,0 +1,1 @@
+HOMEWORK_DONE = "Дз виконали: {name}"
