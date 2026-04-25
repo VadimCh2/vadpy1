@@ -1,6 +1,6 @@
 import requests
 
-url = 'https://dummyjson.com/recipes'
+url = 'https://dummyjson.com/recipes?limit=0'
 
 response = requests.get(url=url)
 response_json = response.json()
