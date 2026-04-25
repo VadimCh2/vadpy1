@@ -24,17 +24,17 @@ car_model = porshe_911_gt_rs3.get("model")
 print(car_model)
 
 car_price = porshe_911_gt_rs3.get("price")
-print(car_price)
+print(car_price,"грн")
 
 first_feature = porshe_911_gt_rs3.get("interior_features")[0]
 print(first_feature)
 
 folded_trunk = porshe_911_gt_rs3.get("trunk").get("folded_seats_volume")
-print(folded_trunk)
+print(folded_trunk,"л")
 
 insurance = porshe_911_gt_rs3["price"] * 0.005
 porshe_911_gt_rs3["insurance_payment"] = insurance
-print(insurance)
+print(insurance,"грн")
 
 trip_cost = 2 * porshe_911_gt_rs3["fuel_consumption"] * 93
 print("Вартість подорожі на 200 км:", trip_cost, "грн")
