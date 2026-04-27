@@ -1,11 +1,9 @@
 import requests
-from pprint import pprint
 
 url = 'https://script.google.com/macros/s/AKfycbygyFTYWMm5eRoLmvyI8S5pjWLPj-H3LOFDocJPorQsbV-OGaRRJ7DhsR8faoutWTf9/exec'
 
 response = requests.get(url=url, params={})
 response_json = response.json()
-# pprint(response_json)
 venomous_care_cost = 0
 animals = response_json['animals']
 african_animals = 0
