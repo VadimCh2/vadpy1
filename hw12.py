@@ -1,26 +1,26 @@
 # 1.
-def average(a, b, c):
-    result = (a + b + c) / 2
-    rounded_result = round(result)
+def get_average(a: float | int, b: float | int, c: float | int) -> float:
+    result = (a + b + c) / 3
+    rounded_result = round(result, 2)
     return rounded_result
 
-average_result = average(a=1,b=2,c=4)
+average_result = get_average(a=1,b=2,c=4)
 print(average_result)
 
 # 2.
 
-def number_that_more_then_10(number: int | float) -> bool:
+def get_number_that_more_then_10(number: int | float) -> bool:
     if number > 10 and number % 2 == 0:
         return True
     else:
         return False
 
-result_number_that_more_then_10 = number_that_more_then_10(number=67)
+result_number_that_more_then_10 = get_number_that_more_then_10(number=67)
 print(result_number_that_more_then_10)
 
 #3.
 
-def vowels(text: str) -> int:
+def get_vowels(text: str) -> int:
     text = text.lower()
     vowels_letters = "aeiouy"
     vowels_count = 0
@@ -29,5 +29,5 @@ def vowels(text: str) -> int:
             vowels_count += 1
 
     return vowels_count
-count_vowels_number = vowels(text='Extraculicular')
+count_vowels_number = get_vowels(text='Extraculicular')
 print(count_vowels_number)
