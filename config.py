@@ -4,4 +4,7 @@ import os
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
-API_SECRET = os.getenv("API_SECRET")
+
+TOKEN_UKR_NET = os.getenv("TOKEN_UKR_NET")
+USER_UKR_NET = os.getenv("USER_UKR_NET")
+SMTP_SERVER = os.getenv("SMTP_SERVER")
