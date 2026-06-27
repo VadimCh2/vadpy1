@@ -1,43 +1,44 @@
 import utils
 from pywebio.input import input, input_group
-from pywebio.output import put_text, put_success
+from pywebio.output import put_success
 from pywebio import start_server
 from pywebio.session import run_js
+import constants
 
 
-# chi23@ukr.net
 def main():
     data = input_group(
-        "Запит на поточну погоду chi23@ukr.net test_hillel_api_mailing@ukr.net",
+        "String Length",
         [
-            input("City", name="city", required=True),
-            input("Email", name="email", required=True),
-            input("Friend email", name="friend_email", required=False),
             input("Name", name="name", required=True),
+            input("String", name="text", required=True),
+            input("Email", name="email", required=True),
         ]
     )
-    current_weather = utils.get_weather_info(data["city"])
-    email_body = utils.create_weather_report(current_weather)
 
-    recipients = [data["email"]]
-    if data["friend_email"]:
-        recipients.append(data["friend_email"])
+    text = data["text"].strip()
+
+    string_info = {
+        "name": data["name"],
+        "text": text,
+        "length": len(text),
+    }
+
+    email_body = utils.create_string_report(string_info)
 
     utils.send_email(
-        recipients,
+        [data["email"]],
         email_body,
-        mail_subject=f'Weather in {data["city"]}',
-        # attachment='log.csv'
+        mail_subject=constants.MAIL_SUBJECT,
     )
 
-    put_success("The page reloads in 5 seconds...")
+    put_success("Email was sent successfully!")
 
     run_js("""
         setTimeout(() => {
             window.location.reload();
         }, 5000);
     """)
-    # put_text(f"Температура у {city}: {current_weather['temperature']}")
 
 
 start_server(
